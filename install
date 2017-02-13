@@ -6,15 +6,20 @@
 
 #=============================================================
 #Modify Instruction Generator Source
+cd 2.0/
 directory=$(pwd)
 newpath="$directory"
 oldpath="/home/cml/CGRA"
 sed -i "s|$oldpath|$newpath|g" $newpath/InstructionGenerator/insgen.cpp
 
 #build Instruction Generator
-cd 2.0/InstructionGenerator
+cd InstructionGenerator
 g++ -static insgen.cpp -o insgen 
 cd ../
+
+#=============================================================
+#Give access to all scripts
+chmod +x scripts/*.sh
 
 #=============================================================
 

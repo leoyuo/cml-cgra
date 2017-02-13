@@ -477,7 +477,7 @@ int getVariableAddress(string var,string obj)
   int i=0; 
 
 
-  command = "/home/cml/cml-cgra/2.0/scripts/getaddress.sh ";
+  command = "/home/cml/CGRA/scripts/getaddress.sh";
   command += obj + " " + var;
 
   if (( pipe = popen(command.c_str(), "r")) == NULL)
@@ -816,7 +816,7 @@ void printvalue(string var,string obj)
   string command;
 
 
-  command = "/home/cml/cml-cgra/2.0/scripts/getaddress.sh";
+  command = "/home/cml/CGRA/scripts/getaddress.sh";
   command += obj + " " + var;
 
   if (( pipe = popen(command.c_str(), "r")) == NULL)

@@ -1,0 +1,4 @@
+If you want to run the program on a loop, create a new directory and copy the files from new to that directory.
+You may modify the scripts and template files to see the effect on other loops.
+To debug, follow the steps of script run.sh which should indicate the tool which has the possible error.
+Enjoy the proof of concept model!

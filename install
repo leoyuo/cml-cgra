@@ -2,9 +2,14 @@
 
 #./dependecies
 
-#This script install all the frameworks required for CGRA execution.
+#This script install all the tools required for CGRA execution on the framework.
 
 #=============================================================
+#Modify Instruction Generator Source
+directory=$(pwd)
+newpath="$directory"
+oldpath="/home/cml/CGRA"
+sed -i "s|$oldpath|$newpath|g" $newpath/InstructionGenerator/insgen.cpp
 
 #build Instruction Generator
 cd 2.0/InstructionGenerator
@@ -25,7 +30,7 @@ cd gem5
 scons build/ARM/gem5.opt
 cp ../Dependencies/ARM build/variables/ 
 scons build/ARM/gem5.opt
-cd ../../
+cd ../
 
 #===========================================================
 
@@ -34,17 +39,14 @@ cd llvm
 rm -rf build
 mkdir build
 cd build
-../configure ENABLE_OPTIMIZED=1
-#cmake -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" ../
-cp Makefile.config Makefile.config.in
 cp ../Makefile.rules .
-make
+../configure
+cp Makefile.config Makefile.config.in
+make -j4
 cd ../../
 
-#==========================================================
-
-#Making CGRA-Loop recognition LLVM Pass. 
-cp -r 2.0/MahdiLoop llvm/build/lib/Transfoms/ 
+#Making DFG generation LLVM Pass. 
+cp -r MahdiLoop llvm/build/lib/Transfoms/ 
 cd llvm/build/lib/Transforms/MahdiLoop/
 make
 

@@ -6,7 +6,7 @@ llfile="$name.ll"
 dfgfile="$name.dfg"
 schfile="$name.sch"
 
-toolchain="../"
+toolchain="../.."
 
 regiver="REGIMap_2.8"
 regimap="$toolchain/REGIMap/$regiver/Release"
@@ -22,9 +22,7 @@ echo $node
 echo $llfile
 echo $name
 
-#$regimap/REGIMap_2.2 -EDGE $edge -NODE $node -X 4 -Y 4 -R 2 -REGI -FlexibleRF > $schfile
-$regimap/REGIMap_2.2 -EDGE $edge -NODE $node -X 4 -Y 4 -R 8 -REGI > $schfile
-#$regimap/REGIMap_2.2 -EDGE $edge -X 4 -Y 4 -R 8 -REGI
+$regimap/REGIMap_2.2 -EDGE $edge -NODE $node -X 4 -Y 4 -R 8 -REGI -FlexibleRF > $schfile
 
 $nodefile/nodefile $node REGIDUMP_node.txt > final_node.txt
 mkdir graphs

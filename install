@@ -41,10 +41,10 @@ cd ../
 
 #Enter llvm directory to build llvm
 cd llvm
-rm -rf build
-mkdir build
+#rm -rf build
+#mkdir build
 cd build
-cp ../Makefile.rules ./
+#cp ../Makefile.rules ./
 ../configure
 cp Makefile.config Makefile.config.in
 make -j4

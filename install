@@ -47,7 +47,7 @@ cd build
 #cp ../Makefile.rules ./
 ../configure
 cp Makefile.config Makefile.config.in
-make -j4
+make
 cd ../../
 
 #Making DFG generation LLVM Pass. 

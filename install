@@ -51,7 +51,7 @@ make
 cd ../../
 
 #Making DFG generation LLVM Pass. 
-cp -r MahdiLoop llvm/build/lib/Transfoms/ 
+cp -r MahdiLoop llvm/build/lib/Transforms/ 
 cd llvm/build/lib/Transforms/MahdiLoop/
 make
 
